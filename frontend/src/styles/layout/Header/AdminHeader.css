@@ -1,0 +1,75 @@
+.admin-header {
+    background: white;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 0 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.admin-header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+}
+
+.admingreeting {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1e293b;
+    letter-spacing: -0.01em;
+}
+
+.admingreeting::before {
+    content: "👋 ";
+    font-size: 1.3rem;
+}
+
+.logout-btn {
+    background: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 40px;
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #475569;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.logout-btn:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+.logout-btn::before {
+    content: "🚪";
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        padding: 0 20px;
+    }
+
+    .admin-header-container {
+        height: 64px;
+    }
+
+    .admingreeting {
+        font-size: 1rem;
+    }
+
+    .logout-btn {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+}

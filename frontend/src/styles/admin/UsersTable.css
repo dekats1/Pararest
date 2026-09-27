@@ -1,0 +1,297 @@
+.users-section {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.users-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.users-header h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.refresh-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.refresh-btn:hover {
+    background: white;
+    border-color: #94a3b8;
+}
+
+.role-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.role-tabs button {
+    background: #f1f5f9;
+    border: none;
+    border-radius: 40px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.role-tabs button:hover {
+    background: #e2e8f0;
+}
+
+.role-tabs button.active {
+    background: #2563eb;
+    color: white;
+}
+
+/* Простой контейнер с прокруткой */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid #f1f5f9;
+    margin-bottom: 16px;
+    /* Стандартный скролл браузера */
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    background: white;
+    /* Без min-width - пусть таблица сжимается сколько может */
+}
+
+.users-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 600;
+    padding: 16px 12px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.users-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.users-table tbody tr:hover {
+    background-color: #fafcff;
+}
+
+/* Blocked row styling */
+.users-table .blocked-row {
+    background-color: #fffbfa;
+    opacity: 0.85;
+}
+
+.users-table .blocked-row td {
+    color: #64748b;
+}
+
+/* Zero wallet */
+.zero-wallet {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.role-select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    font-size: 0.9rem;
+    color: #1e293b;
+    cursor: pointer;
+    min-width: 110px;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-badge.active {
+    background: #e6f7e6;
+    color: #0b5e42;
+}
+
+.status-badge.blocked {
+    background: #fee9e7;
+    color: #b91c1c;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.block-btn,
+.delete-btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.block-btn.block {
+    background: #fff3e0;
+    color: #b45309;
+}
+
+.block-btn.unblock {
+    background: #e6f7e6;
+    color: #0b5e42;
+}
+
+.delete-btn {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 48px 20px;
+    color: #64748b;
+}
+
+.table-footer {
+    margin-top: 20px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #64748b;
+    padding-top: 12px;
+    border-top: 1px solid #f1f5f9;
+}
+
+/* Загрузка и ошибки */
+.users-section.loading,
+.users-section.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 16px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error-message {
+    color: #b91c1c;
+    margin-bottom: 16px;
+}
+
+.retry-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.retry-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Адаптация для мобилок */
+@media (max-width: 768px) {
+    .users-section {
+        padding: 20px 16px;
+    }
+
+    .users-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .users-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .role-tabs button {
+        padding: 6px 14px;
+        font-size: 0.85rem;
+    }
+
+    .users-table th,
+    .users-table td {
+        padding: 12px 8px;
+        font-size: 0.85rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .block-btn,
+    .delete-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,149 @@
+.supplies-section {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    padding: 24px 28px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.supplies-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.supplies-header h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.request-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.request-btn:hover {
+    background: #1d4ed8;
+}
+
+.request-form {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid #e2e8f0;
+}
+
+.request-form h3 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: #1e293b;
+    font-size: 1.2rem;
+}
+
+.supplier-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.supplier-phone {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.supply-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.supply-status.completed {
+    background: #e6f7e6;
+    color: #0b5e42;
+}
+
+.supply-status.pending {
+    background: #fff3e0;
+    color: #b45309;
+}
+
+.supplies-table td {
+    vertical-align: middle;
+}
+
+.supplies-section,
+.supplies-section * {
+    color: #1e293b;
+}
+
+.supplies-section label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.supplies-section input,
+.supplies-section select {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #fff;
+    color: #0f172a;
+}
+
+.supplies-section input::placeholder {
+    color: #94a3b8;
+}
+
+.supplies-section .table-responsive {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.supplies-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.supplies-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    text-align: left;
+    font-weight: 600;
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.supplies-table td {
+    color: #334155;
+    padding: 12px 14px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.supplies-table tr:last-child td {
+    border-bottom: none;
+}

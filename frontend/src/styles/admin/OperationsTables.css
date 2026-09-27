@@ -1,0 +1,269 @@
+.ops-section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ops-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ops-title-group {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.ops-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.ops-count {
+    font-size: 0.875rem;
+    color: #94a3b8;
+    font-weight: 400;
+}
+
+.ops-refresh-btn {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #334155;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ops-refresh-btn:hover {
+    background: white;
+    border-color: #94a3b8;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid #f1f5f9;
+    margin-bottom: 16px;
+}
+
+.ops-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    background: white;
+}
+
+.ops-table th {
+    background: #f8fafc;
+    color: #1e293b;
+    font-weight: 600;
+    padding: 14px 16px;
+    text-align: left;
+    white-space: nowrap;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.ops-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #334155;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.ops-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.ops-table tbody tr:hover td {
+    background: #fafcff;
+}
+
+.ops-id {
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.ops-muted {
+    color: #64748b;
+    font-size: 0.88rem;
+}
+
+.ops-price {
+    font-weight: 600;
+    color: #1e293b;
+    font-variant-numeric: tabular-nums;
+}
+
+.ops-center {
+    text-align: center;
+}
+
+.ops-pay-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ops-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.status-pending {
+    background: #fef9c3;
+    color: #854d0e;
+}
+
+.status-processing {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.status-completed {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-cancelled {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+.pay-paid {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.pay-unpaid {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.pay-refunded {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.ops-type-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    background: #eff6ff;
+    color: #1d4ed8;
+    white-space: nowrap;
+}
+
+.ops-footer {
+    text-align: right;
+    font-size: 0.875rem;
+    color: #94a3b8;
+    padding-top: 8px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.ops-section--loading,
+.ops-section--error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    gap: 12px;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.ops-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: ops-spin 0.8s linear infinite;
+}
+
+@keyframes ops-spin {
+    to { transform: rotate(360deg); }
+}
+
+.ops-error-msg {
+    color: #b91c1c;
+    margin: 0;
+}
+
+.ops-retry-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.ops-retry-btn:hover {
+    background: #1d4ed8;
+}
+
+.ops-error-inline {
+    background: #fef2f2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+.ops-empty {
+    text-align: center;
+    padding: 48px 20px;
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .ops-title {
+        font-size: 1.3rem;
+    }
+
+    .ops-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ops-refresh-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ops-table th,
+    .ops-table td {
+        padding: 10px 10px;
+        font-size: 0.82rem;
+    }
+}

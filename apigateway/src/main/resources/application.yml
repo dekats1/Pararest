@@ -1,0 +1,43 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: apigateway
+  main:
+    web-application-type: reactive
+  profiles:
+    active: local
+
+jwt:
+  secret: ${JWT_SECRET}
+  ttl-seconds: 86400
+  issuer: actisys-auth
+  refresh-token-expire-mill: 604800000
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    urls:
+      - name: "1. Auth Service"
+        url: "/v3/api-docs/auth"
+      - name: "2. User Service"
+        url: "/v3/api-docs/users"
+      - name: "3. Menu Service"
+        url: "/v3/api-docs/menu"
+      - name: "4. Inventory Service"
+        url: "/v3/api-docs/inventory"
+      - name: "5. Orders Service"
+        url: "/v3/api-docs/orders"
+      - name: "6. Payments Service"
+        url: "/v3/api-docs/payments"
+      - name: "7. Composite Service"
+        url: "/v3/api-docs/composite"
+      - name: "8. Analytics Service"
+        url: "/v3/api-docs/analytics"
+
+logging:
+  level:
+    com.actisys.apigateway.filter: DEBUG
+    com.actisys.apigateway.util: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

@@ -1,0 +1,321 @@
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: backdropFadeIn 0.2s ease;
+}
+
+@keyframes backdropFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.modal-container {
+    background: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: modalSlideUp 0.25s ease;
+}
+
+@keyframes modalSlideUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== ШАПКА ===== */
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.modal-close {
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+    color: #666;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+}
+
+.modal-close:hover {
+    background: #ffe0e0;
+    color: #e53935;
+}
+
+/* ===== ИТОГОВАЯ СУММА ===== */
+.modal-price-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff8f0;
+    padding: 0.9rem 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.modal-total-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff6b6b;
+}
+
+/* ===== ФОРМА ===== */
+.modal-form {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.modal-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.modal-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 0.01em;
+}
+
+.optional {
+    font-weight: 400;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* ===== ТОГГЛЫ (тип заказа / оплата) ===== */
+.order-type-toggle,
+.payment-type-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.toggle-btn {
+    padding: 0.65rem 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fafafa;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+.toggle-btn:hover:not(:disabled):not(.disabled-btn) {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    background: #fff5f5;
+}
+
+.toggle-btn.active {
+    border-color: #ff6b6b;
+    background: #ff6b6b;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.35);
+}
+
+.toggle-btn.disabled-btn,
+.toggle-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    border-color: #e0e0e0;
+    background: #fafafa;
+    color: #aaa;
+}
+
+/* ===== ПОДСКАЗКА / НОМЕР КОМНАТЫ ===== */
+.modal-hint {
+    font-size: 0.8rem;
+    color: #999;
+    margin: 0;
+}
+
+.modal-hint a {
+    color: #ff6b6b;
+    text-decoration: underline;
+}
+
+.room-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 6px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.85rem;
+    align-self: flex-start;
+    margin-top: 0.25rem;
+}
+
+/* ===== TEXTAREA ===== */
+.modal-textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: #333;
+    resize: vertical;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.modal-textarea:focus {
+    outline: none;
+    border-color: #ff6b6b;
+}
+
+.modal-textarea:disabled {
+    background: #fafafa;
+    color: #aaa;
+}
+
+.char-count {
+    font-size: 0.75rem;
+    color: #bbb;
+    text-align: right;
+}
+
+/* ===== ОШИБКА ===== */
+.modal-error {
+    background: #fff3f3;
+    border: 1px solid #ffcdd2;
+    border-radius: 8px;
+    color: #c62828;
+    font-size: 0.875rem;
+    padding: 0.65rem 0.9rem;
+    margin: 0;
+}
+
+/* ===== КНОПКИ ДЕЙСТВИЙ ===== */
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+}
+
+.btn-cancel {
+    flex: 0 0 auto;
+    padding: 0.75rem 1.25rem;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    background: #fff;
+    color: #666;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-cancel:hover:not(:disabled) {
+    background: #f5f5f5;
+    border-color: #ccc;
+}
+
+.btn-confirm {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 10px;
+    background: #ff6b6b;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-confirm:hover:not(:disabled) {
+    background: #ff5252;
+    box-shadow: 0 4px 14px rgba(255, 107, 107, 0.4);
+}
+
+.btn-confirm:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.btn-confirm:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ===== СПИННЕР ===== */
+.btn-spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 480px) {
+    .modal-container {
+        border-radius: 12px 12px 0 0;
+        max-width: 100%;
+        margin-top: auto;
+    }
+
+    .modal-backdrop {
+        align-items: flex-end;
+        padding: 0;
+    }
+
+    .modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .btn-cancel {
+        width: 100%;
+    }
+}

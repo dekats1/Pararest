@@ -1,0 +1,617 @@
+/* src/components/MenuSection.css */
+.menu-section {
+    padding: 60px 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.menu-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 16px;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+    border-radius: 2px;
+}
+
+.menu-subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.menu-controls {
+    margin-bottom: 48px;
+}
+
+.search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 24px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    background: white;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: #95a5a6;
+    pointer-events: none;
+}
+
+.categories-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.category-chip {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #2c3e50;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.category-chip:hover {
+    border-color: #e74c3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-chip.active {
+    background: linear-gradient(135deg, #e74c3c, #f39c12);
+    color: white;
+    border-color: transparent;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 32px;
+}
+
+.menu-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.preparation-time {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.card-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+.card-description {
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.card-footer {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-composition,
+.btn-cart,
+.btn-cart-disabled {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-composition {
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+
+.btn-composition:hover {
+    background: #bdc3c7;
+    transform: translateY(-2px);
+}
+
+.btn-cart {
+    background: linear-gradient(135deg, #e74c3c, #f39c12);
+    color: white;
+}
+
+.btn-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.btn-cart-disabled {
+    background: #bdc3c7;
+    color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #95a5a6;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: #e74c3c;
+}
+
+.modal-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 24px;
+    padding-right: 24px;
+}
+
+.composition-details {
+    margin-top: 20px;
+}
+
+.ingredients-list,
+.cooking-steps {
+    margin-bottom: 24px;
+}
+
+.ingredients-list h4,
+.cooking-steps h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.ingredients-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ingredients-list li {
+    background: #ecf0f1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.cooking-steps ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.cooking-steps li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #34495e;
+}
+
+.cooking-time {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 16px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Уведомления */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2ecc71;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    animation: slideInRight 0.3s ease;
+}
+
+/* Загрузка */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #e74c3c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+}
+
+.spinner-small {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #e74c3c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 12px;
+}
+
+.composition-loading {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.composition-loading p {
+    color: #7f8c8d;
+}
+
+.composition-error {
+    text-align: center;
+    color: #e74c3c;
+    padding: 20px;
+}
+
+/* Сообщения об ошибках */
+.error-message {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.error-message p {
+    color: #e74c3c;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.retry-button,
+.reset-button {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #e74c3c, #f39c12);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.retry-button:hover,
+.reset-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+/* Нет результатов */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 16px;
+}
+
+.no-results p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Анимации */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-section {
+        padding: 40px 0;
+    }
+
+    .menu-title {
+        font-size: 2rem;
+    }
+
+    .menu-subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .categories-filter {
+        gap: 8px;
+    }
+
+    .category-chip {
+        padding: 6px 16px;
+        font-size: 0.85rem;
+    }
+
+    .modal-content {
+        padding: 24px;
+        margin: 16px;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .card-footer {
+        flex-direction: column;
+    }
+
+    .btn-composition,
+    .btn-cart,
+    .btn-cart-disabled {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-input {
+        font-size: 0.9rem;
+    }
+
+    .category-chip {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+}
+
+/* Добавьте эти стили к существующим в MenuSection.css */
+
+.ingredients-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ingredients-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.ingredients-list li:hover {
+    background: #ecf0f1;
+    transform: translateX(4px);
+}
+
+.ingredient-name {
+    font-weight: 500;
+    color: #2c3e50;
+    font-size: 0.95rem;
+}
+
+.ingredient-quantity {
+    color: #e74c3c;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.recipe-note {
+    margin-top: 20px;
+    padding: 12px;
+    background: #fff3e0;
+    border-left: 3px solid #f39c12;
+    border-radius: 8px;
+}
+
+.recipe-note p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .ingredients-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .ingredient-quantity {
+        align-self: flex-start;
+    }
+}

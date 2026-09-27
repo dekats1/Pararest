@@ -1,0 +1,11 @@
+.cart-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f7f4f0;
+}
+
+.cart-page main {
+    flex: 1;
+    padding: 48px 24px 60px;
+}

@@ -1,0 +1,111 @@
+.admin-layout {
+    --admin-sidebar-width: 220px;
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fa;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.admin-main {
+    flex: 1;
+    margin-left: var(--admin-sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: 0;
+    width: calc(100% - var(--admin-sidebar-width));
+    max-width: 100%;
+}
+
+.admin-content {
+    flex: 1;
+    padding: 20px 30px;
+    overflow-y: auto;
+    background: #f5f7fa;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.admin-section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    padding: 25px;
+    scroll-margin-top: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    /* Убираем overflow-x из секции */
+}
+
+/* Стили для таблиц - они должны адаптироваться, а не скроллиться */
+.admin-section table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Убираем min-width и overflow */
+}
+
+/* Адаптация для ноутбуков */
+@media (max-width: 1366px) {
+    .admin-layout {
+        --admin-sidebar-width: 200px;
+    }
+
+    .admin-main {
+        margin-left: var(--admin-sidebar-width);
+        width: calc(100% - var(--admin-sidebar-width));
+    }
+
+    .admin-content {
+        padding: 15px 20px;
+    }
+
+    .admin-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .admin-layout {
+        --admin-sidebar-width: 70px;
+    }
+
+    .admin-main {
+        margin-left: var(--admin-sidebar-width);
+        width: calc(100% - var(--admin-sidebar-width));
+    }
+
+    .admin-content {
+        padding: 10px 15px;
+    }
+
+    .admin-section {
+        padding: 15px;
+    }
+
+    /* Адаптируем таблицу для маленьких экранов */
+    .admin-section table {
+        font-size: 0.85rem;
+    }
+
+    .admin-section th,
+    .admin-section td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-main {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .admin-content {
+        padding: 10px;
+    }
+
+    .admin-section {
+        padding: 12px;
+    }
+}

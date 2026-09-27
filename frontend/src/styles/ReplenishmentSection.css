@@ -1,0 +1,259 @@
+.replenishment-section {
+    padding: 48px 24px 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.replenishment-card {
+    background: #ffffff;
+    border: 1px solid #e8e8ed;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Header */
+.replenishment-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.wallet-icon {
+    width: 52px;
+    height: 52px;
+    background: #f0f0ff;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5b5bd6;
+    flex-shrink: 0;
+}
+
+.wallet-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.replenishment-title {
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0 0 4px;
+}
+
+.replenishment-subtitle {
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: #8a8a9a;
+    margin: 0;
+}
+
+/* Form */
+.replenishment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Quick amounts */
+.quick-amounts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.quick-amount-btn {
+    padding: 12px 8px;
+    background: #f5f5fa;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3a3a5c;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    text-align: center;
+}
+
+.quick-amount-btn:hover {
+    background: #ebebff;
+    border-color: #c5c5f0;
+    color: #5b5bd6;
+}
+
+.quick-amount-btn.active {
+    background: #5b5bd6;
+    border-color: #5b5bd6;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(91, 91, 214, 0.35);
+}
+
+/* Amount input - ИСПРАВЛЕНО */
+.amount-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currency-symbol {
+    position: absolute;
+    right: 18px; /* Изменено с left на right */
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #8a8a9a; /* Изменен цвет, чтобы не отвлекал */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.amount-input {
+    width: 100%;
+    padding: 16px 60px 16px 20px; /* Изменено: справа больше отступ для BYN */
+    border: 2px solid #e8e8ed;
+    border-radius: 14px;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a2e;
+    background: #fafafa;
+    outline: none;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    box-sizing: border-box;
+    text-align: right; /* Добавлено: выравнивание чисел справа */
+}
+
+.amount-input::placeholder {
+    color: #c0c0cf;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: left; /* Плейсхолдер слева */
+}
+
+.amount-input:focus {
+    border-color: #5b5bd6;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(91, 91, 214, 0.1);
+}
+
+.amount-input.error {
+    border-color: #e8524a;
+    box-shadow: 0 0 0 4px rgba(232, 82, 74, 0.1);
+}
+
+.amount-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Feedback messages */
+.replenishment-error,
+.replenishment-success {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+.replenishment-error {
+    color: #c0392b;
+    background: #fff0ef;
+}
+
+.replenishment-success {
+    color: #1a7f4e;
+    background: #edfaf3;
+}
+
+/* Submit button */
+.replenishment-btn {
+    padding: 16px 24px;
+    background: #5b5bd6;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    min-height: 54px;
+    letter-spacing: 0.2px;
+}
+
+.replenishment-btn:hover:not(:disabled) {
+    background: #4848c2;
+    box-shadow: 0 6px 20px rgba(91, 91, 214, 0.4);
+    transform: translateY(-1px);
+}
+
+.replenishment-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.replenishment-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.replenishment-btn.loading {
+    background: #8080e0;
+}
+
+.btn-amount {
+    opacity: 0.85;
+    font-weight: 600;
+}
+
+/* Spinner */
+.btn-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .replenishment-card {
+        padding: 28px 20px;
+    }
+
+    .quick-amounts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .replenishment-title {
+        font-size: 18px;
+    }
+
+    .amount-input {
+        padding: 14px 55px 14px 16px;
+        font-size: 18px;
+    }
+
+    .currency-symbol {
+        right: 16px;
+        font-size: 16px;
+    }
+}

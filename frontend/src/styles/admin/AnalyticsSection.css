@@ -1,0 +1,244 @@
+/* AnalyticsSection.css — industrial admin aesthetic */
+
+.analytics-root {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #0f172a;
+}
+
+/* Header */
+.analytics-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 12px;
+}
+
+.analytics-label {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #2563eb;
+}
+
+.analytics-period {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #64748b;
+    letter-spacing: 0.05em;
+}
+
+/* Grid */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+/* Metric Cards */
+.metric-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.metric-card:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.08);
+}
+
+.metric-icon {
+    font-size: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    min-width: 24px;
+    text-align: center;
+    line-height: 1;
+}
+
+.metric-revenue .metric-icon { color: #4ade80; }
+.metric-expenses .metric-icon { color: #f87171; }
+.metric-orders .metric-icon { color: #60a5fa; }
+.metric-avg .metric-icon { color: #c084fc; }
+.metric-top-dish .metric-icon { color: #f59e0b; }
+
+.profit-pos .metric-icon { color: #4ade80; }
+.profit-neg .metric-icon { color: #f87171; }
+
+.metric-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.metric-title {
+    font-size: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.1em;
+    color: #64748b;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.metric-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.metric-subvalue {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.profit-pos .metric-value { color: #4ade80; }
+.profit-neg .metric-value { color: #f87171; }
+
+/* Top Dishes */
+.top-dishes {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.top-dishes-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #e8c468;
+}
+
+.dishes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dish-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dish-rank {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.2);
+    min-width: 22px;
+    font-weight: 700;
+}
+
+.dish-bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.dish-name {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dish-bar-track {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.dish-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #e8c468, #f0a030);
+    border-radius: 2px;
+    animation: barGrow 0.6s ease-out both;
+}
+
+@keyframes barGrow {
+    from { width: 0% !important; }
+    to   { /* width set inline */ }
+}
+
+.dish-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    min-width: 52px;
+    text-align: right;
+}
+
+/* Skeleton */
+.analytics-skeleton {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.skeleton-card {
+    height: 72px;
+    border-radius: 6px;
+    background: linear-gradient(
+            90deg,
+            rgba(255,255,255,0.04) 25%,
+            rgba(255,255,255,0.08) 50%,
+            rgba(255,255,255,0.04) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Error */
+.analytics-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 32px;
+    color: #475569;
+}
+
+.error-icon {
+    font-size: 28px;
+    color: #f87171;
+}
+
+.analytics-error p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.error-detail {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #64748b;
+}
