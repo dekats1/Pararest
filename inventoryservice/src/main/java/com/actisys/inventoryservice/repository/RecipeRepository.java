@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface RecipeRepository extends JpaRepository<Recipe, RecipeId> {
     List<Recipe> findByIdMenuItemId(Long id);
 }
